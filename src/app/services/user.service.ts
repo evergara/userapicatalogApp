@@ -18,7 +18,7 @@ export class UserService {
       .pipe(map((response) => this.mapperResponse(response)));
   }
 
-  fetchUser(uuid: number): Observable<ResponseAPI> {
+  fetchUser(uuid: string): Observable<ResponseAPI> {
     return this.http
       .get<ResponseAPI>(`${this.apiURL}/?uuid=${uuid}`)
       .pipe(map((response) => this.mapperResponse(response)));
@@ -34,7 +34,7 @@ export class UserService {
             firstName: user.name.first,
             lastName: user.name.last,
             email: user.email,
-            username: user.login.username,
+            userName: user.login.username,
             gender: user.gender,
             address: `${user.location.street.number} ${user.location.street.name} ${user.location.city} ${user.location.country}`,
             dateOfBirth: user.dob.date,

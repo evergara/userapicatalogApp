@@ -1,1 +1,146 @@
-<p>users-detail works!</p>
+<div class="main-body">
+  <div class="row">
+    <a routerLink="/users" class="return-link">&#8592; Back to users</a>
+    <div class="col-lg-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex flex-column align-items-center text-center">
+            <img
+              class="circle-img p-1 bg-primary"
+              [src]="response.results[0].picture.large"
+              [alt]="response.results[0].firstName"
+            />
+            <div class="mt-3">
+              <h4>Name:</h4>
+              <p class="text-secondary brightness_1">
+                {{ response.results[0].userName }}
+              </p>
+              <p class="text-muted font-size-sm">
+                ID: {{ response.results[0].uuid }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col-sm-3">
+              <h6 class="mb-0">First Name</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <input
+                type="text"
+                [disabled]="mode === 'locked'"
+                class="form-control"
+                name="firstName"
+                id="firstName"
+                [value]="response.results[0].firstName"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Last Name</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <input
+                type="text"
+                [disabled]="mode === 'locked'"
+                class="form-control"
+                name="lastName"
+                id="lastName"
+                [value]="response.results[0].lastName"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Date of Birth</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <input
+                type="text"
+                [disabled]="mode === 'locked'"
+                class="form-control"
+                name="dateOfBirth"
+                id="dateOfBirth"
+                [value]="response.results[0].dateOfBirth"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Email</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <input
+                type="text"
+                [disabled]="mode === 'locked'"
+                class="form-control"
+                name="email"
+                id="email"
+                [value]="response.results[0].email"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Phone</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <input
+                type="text"
+                [disabled]="mode === 'locked'"
+                class="form-control"
+                name="phone"
+                id="phone"
+                [value]="response.results[0].phone"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Gender</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <input
+                type="text"
+                [disabled]="mode === 'locked'"
+                class="form-control"
+                name="gender"
+                id="gender"
+                [value]="response.results[0].gender"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3">
+              <h6 class="mb-0">Address</h6>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <input
+                type="text"
+                [disabled]="mode === 'locked'"
+                class="form-control"
+                name="address"
+                id="address"
+                [value]="response.results[0].address"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3">&#160;</div>
+            <div class="col-sm-9 text-secondary">
+              <button class="btn btn-primary px-4" (click)="changeMode(mode)">
+                {{ btnSaveText }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
