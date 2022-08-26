@@ -1,6 +1,6 @@
 import { Info } from './info';
 
-export interface Response {
+export interface ResponseAPI {
   results: any[];
   info: Info;
 }

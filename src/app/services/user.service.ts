@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Response } from '../model/response';
+import { ResponseAPI } from '../model/response';
 import { User } from '../model/user';
 
 @Injectable({
@@ -12,19 +12,19 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  fetchUsers(size: number = 10): Observable<Response> {
+  fetchUsers(size: number = 10): Observable<ResponseAPI> {
     return this.http
-      .get<Response>(`${this.apiURL}/?results=${size}`)
+      .get<ResponseAPI>(`${this.apiURL}/?results=${size}`)
       .pipe(map((response) => this.mapperResponse(response)));
   }
 
-  fetchUser(uuid: number): Observable<Response> {
+  fetchUser(uuid: number): Observable<ResponseAPI> {
     return this.http
-      .get<Response>(`${this.apiURL}/?uuid=${uuid}`)
+      .get<ResponseAPI>(`${this.apiURL}/?uuid=${uuid}`)
       .pipe(map((response) => this.mapperResponse(response)));
   }
 
-  private mapperResponse(response: Response): Response {
+  private mapperResponse(response: ResponseAPI): ResponseAPI {
     return {
       info: { ...response.info },
       results: response.results.map(

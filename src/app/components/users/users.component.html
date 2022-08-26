@@ -1,1 +1,49 @@
-<p>users works!</p>
+<div class="card">
+  <div class="card-body">
+    <h4>Random Use API</h4>
+    <p class="card-text">Seed: {{ response.info.seed }}</p>
+    <p class="card-text">Results: {{ response.info.results }}</p>
+    <p class="card-text">Version: {{ response.info.version }}</p>
+  </div>
+</div>
+<br />
+<ng-container *ngIf="response.results.length > 0">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Image</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of response?.results; let i = index">
+        <th scope="row">{{ i }}</th>
+        <th scope="row">
+          <img
+            class="img-fluid img-user"
+            [src]="user.picture.thumbnail"
+            [alt]="user.firstName"
+          />
+        </th>
+        <th scope="row">{{ user.firstName }} {{ user.lastName }}</th>
+        <th scope="row">{{ user.email }}</th>
+        <th scope="row">{{ user.address }}</th>
+        <th scope="row">{{ user.phone }}</th>
+        <th scope="row">
+          <button
+            type="button"
+            class="button btn btn-primary"
+            [routerLink]="['/user', user.uuid]"
+          >
+            View
+          </button>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
