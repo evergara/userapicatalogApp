@@ -7,16 +7,16 @@
           <div class="d-flex flex-column align-items-center text-center">
             <img
               class="circle-img p-1 bg-primary"
-              [src]="response.results[0].picture.large"
-              [alt]="response.results[0].firstName"
+              [src]="user.picture.large"
+              [alt]="user.firstName"
             />
             <div class="mt-3">
               <h4>Name:</h4>
               <p class="text-secondary brightness_1">
-                {{ response.results[0].userName }}
+                {{ user.userName }}
               </p>
               <p class="text-muted font-size-sm">
-                ID: {{ response.results[0].uuid }}
+                ID: {{ user.uuid }}
               </p>
             </div>
           </div>
@@ -37,7 +37,7 @@
                 class="form-control"
                 name="firstName"
                 id="firstName"
-                [value]="response.results[0].firstName"
+                [value]="user.firstName"
               />
             </div>
           </div>
@@ -52,7 +52,7 @@
                 class="form-control"
                 name="lastName"
                 id="lastName"
-                [value]="response.results[0].lastName"
+                [value]="user.lastName"
               />
             </div>
           </div>
@@ -67,7 +67,7 @@
                 class="form-control"
                 name="dateOfBirth"
                 id="dateOfBirth"
-                [value]="response.results[0].dateOfBirth"
+                [value]="user.dateOfBirth"
               />
             </div>
           </div>
@@ -82,7 +82,7 @@
                 class="form-control"
                 name="email"
                 id="email"
-                [value]="response.results[0].email"
+                [value]="user.email"
               />
             </div>
           </div>
@@ -97,7 +97,7 @@
                 class="form-control"
                 name="phone"
                 id="phone"
-                [value]="response.results[0].phone"
+                [value]="user.phone"
               />
             </div>
           </div>
@@ -112,7 +112,7 @@
                 class="form-control"
                 name="gender"
                 id="gender"
-                [value]="response.results[0].gender"
+                [value]="user.gender"
               />
             </div>
           </div>
@@ -127,7 +127,7 @@
                 class="form-control"
                 name="address"
                 id="address"
-                [value]="response.results[0].address"
+                [value]="user.address"
               />
             </div>
           </div>
