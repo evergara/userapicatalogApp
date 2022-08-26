@@ -15,9 +15,7 @@
               <p class="text-secondary brightness_1">
                 {{ user.userName }}
               </p>
-              <p class="text-muted font-size-sm">
-                ID: {{ user.uuid }}
-              </p>
+              <p class="text-muted font-size-sm">ID: {{ user.uuid }}</p>
             </div>
           </div>
         </div>
@@ -137,6 +135,18 @@
               <button class="btn btn-primary px-4" (click)="changeMode(mode)">
                 {{ btnSaveText }}
               </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="d-flex align-items-center mb-3">User Location</h5>
+            <div class="map-border">
+              <div id="map"></div>
             </div>
           </div>
         </div>
